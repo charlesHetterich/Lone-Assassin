@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="Lone Assassin Installer" Language="1033" Version="1.0.0.0" Manufacturer="ChazzSnout" UpgradeCode="1cfeac31-18e1-4bae-bc71-d29fec30dc77">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate EmbedCab ="yes"/>
+
+		<Feature Id="ProductFeature" Title="Installer" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="Lone Assassin" />
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+		  <Component Guid="{0186F6A2-6E28-449B-B82D-8F9ED0036A35}">
+        <File Source="C:\Users\Charles\Desktop\C++ Projects\Projects\lone assassin\Release"/>
+      </Component>
+		</ComponentGroup>
+	</Fragment>
+</Wix>
